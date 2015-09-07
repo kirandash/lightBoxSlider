@@ -3,6 +3,7 @@
   <title>Slider with thumbnails</title>
   <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+  <link href="lightbox.css" rel="stylesheet">
   </head>
   <body>
   
@@ -27,11 +28,11 @@
   <section class="wrapper">
   
       <div class="slider-for">
-        <div><img src="img/i1.jpg">your content 1</div>
-        <div><img src="img/i2.jpg">your content 2</div>
-        <div><img src="img/i3.jpg">your content 3</div>
-        <div><img src="img/i4.jpg">your content 4</div>
-        <div><img src="img/i5.jpg">your content 5</div>
+        <div><a href="img/i1.jpg" data-lightbox="image-1" data-title="My caption"><img src="img/i1.jpg"></a>your content 1</div>
+        <div><a href="img/i2.jpg" data-lightbox="image-1" data-title="My caption"><img src="img/i2.jpg"></a>your content 2</div>
+        <div><a href="img/i3.jpg" data-lightbox="image-1" data-title="My caption"><img src="img/i3.jpg"></a>your content 3</div>
+        <div><a href="img/i4.jpg" data-lightbox="image-1" data-title="My caption"><img src="img/i4.jpg"></a>your content 4</div>
+        <div><a href="img/i5.jpg" data-lightbox="image-1" data-title="My caption"><img src="img/i5.jpg"></a>your content 5</div>
       </div>
       
       <div class="slider-nav">
@@ -49,6 +50,7 @@
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="slick/slick.min.js"></script>
+  <script type="text/javascript" src="lightbox.min.js"></script>
 
   <script type="text/javascript">
     $(document).ready(function(){
@@ -61,13 +63,21 @@
 	  });
 	  $('.slider-nav').slick({
 		slidesToShow: 3,
-		slidesToScroll: 0,
+		slidesToScroll: 1,
 		asNavFor: '.slider-for',
 		dots: true,
 		centerMode: true,
-		focusOnSelect: true
+		focusOnSelect: true,
+		autoplay:true
 	  });
     });
+  </script>
+  
+  <script type="text/javascript">
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true
+    })
   </script>
 
   </body>
